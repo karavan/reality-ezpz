@@ -734,10 +734,10 @@ function generate_docker_compose {
 networks:
   reality:
     driver: bridge
-    enable_ipv6: true
+    enable_ipv6: false
     ipam:
       config:
-      - subnet: fc11::1:0/112
+      - subnet: 10.128.128.0/24
 services:
   engine:
     image: ${image[${config[core]}]}
@@ -808,10 +808,10 @@ function generate_tgbot_compose {
 networks:
   tgbot:
     driver: bridge
-    enable_ipv6: true
+    enable_ipv6: false
     ipam:
       config:
-      - subnet: fc11::2:0/112
+      - subnet: 10.128.129.0/24
 services:
   tgbot:
     build: ./
