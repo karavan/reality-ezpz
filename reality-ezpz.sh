@@ -723,7 +723,7 @@ function install_docker {
     docker_cmd="docker-compose"
     return 0
   fi
-  curl -fsSL -m 30 https://github.com/docker/compose/releases/download/v2.28.0/docker-compose-linux-$(uname -m) -o /usr/local/bin/docker-compose
+  curl -fsSL -m 30 https://github.com/docker/compose/releases/download/v2.32.4/docker-compose-linux-$(uname -m) -o /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
   docker_cmd="docker-compose"
   return 0
@@ -731,7 +731,6 @@ function install_docker {
 
 function generate_docker_compose {
   cat >"${path[compose]}" <<EOF
-version: "3"
 networks:
   reality:
     driver: bridge
@@ -806,7 +805,6 @@ EOF
 
 function generate_tgbot_compose {
   cat >"${path[tgbot_compose]}" <<EOF
-version: "3"
 networks:
   tgbot:
     driver: bridge
