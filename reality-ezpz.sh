@@ -976,7 +976,7 @@ EOF
 }
 
 function download_tgbot_script {
-  curl -fsSL -m 3 https://raw.githubusercontent.com/karavan/reality-ezpz/master/tgbot.py -o "${path[tgbot_script]}"
+  curl -fsSL -m 3 https://raw.githubusercontent.com/karavan/reality-ezpz-ipv4/master/tgbot.py -o "${path[tgbot_script]}"
 }
 
 function generate_selfsigned_certificate {
