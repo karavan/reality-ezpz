@@ -1069,7 +1069,7 @@ function generate_engine_config {
     "servers": [
     $([[ ${config[safenet]} == ON ]] && echo '{"address": "tcp://1.1.1.3", "detour": "internet"},{"address": "tcp://1.0.0.3", "detour": "internet"}' || echo '{"address": "tcp://1.1.1.1", "detour": "internet"},{"address": "tcp://1.0.0.1", "detour": "internet"}')
     ],
-    "strategy": "prefer_ipv4"
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {
@@ -1086,7 +1086,7 @@ function generate_engine_config {
       "listen_port": 8443,
       "sniff": true,
       "sniff_override_destination": true,
-      "domain_strategy": "prefer_ipv4",
+      "domain_strategy": "ipv4_only",
       "users": [${users_object}],
       $(if [[ ${config[security]} == 'reality' && ${config[transport]} != 'shadowtls' ]]; then
         echo "${reality_object}"
@@ -1125,7 +1125,7 @@ function generate_engine_config {
       "listen_port": 8444,
       "sniff": true,
       "sniff_override_destination": true,
-      "domain_strategy": "prefer_ipv4",
+      "domain_strategy": "ipv4_only",
       "method": "chacha20-ietf-poly1305",
       "password": "'"${config[private_key]}"'",
       "users": ['"${users_object}"']
