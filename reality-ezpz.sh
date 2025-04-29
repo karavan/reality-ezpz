@@ -976,7 +976,7 @@ EOF
 }
 
 function download_tgbot_script {
-  curl -fsSL -m 3 https://raw.githubusercontent.com/aleskxyz/reality-ezpz/master/tgbot.py -o "${path[tgbot_script]}"
+  curl -fsSL -m 3 https://raw.githubusercontent.com/karavan/reality-ezpz/master/tgbot.py -o "${path[tgbot_script]}"
 }
 
 function generate_selfsigned_certificate {
@@ -1150,35 +1150,35 @@ function generate_engine_config {
         "tag": "block",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/aleskxyz/sing-box-rules/refs/heads/rule-set/block.srs",
+        "url": "https://raw.githubusercontent.com/karavan/sing-box-rules/refs/heads/rule-set/block.srs",
         "download_detour": "internet"
       },
       {
         "tag": "nsfw",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/aleskxyz/sing-box-rules/refs/heads/rule-set/geosite-nsfw.srs",
+        "url": "https://raw.githubusercontent.com/karavan/sing-box-rules/refs/heads/rule-set/geosite-nsfw.srs",
         "download_detour": "internet"
       },
       {
         "tag": "geoip-private",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/aleskxyz/sing-box-rules/refs/heads/rule-set/geoip-private.srs",
+        "url": "https://raw.githubusercontent.com/karavan/sing-box-rules/refs/heads/rule-set/geoip-private.srs",
         "download_detour": "internet"
       },
       {
         "tag": "geosite-private",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/aleskxyz/sing-box-rules/refs/heads/rule-set/geosite-private.srs",
+        "url": "https://raw.githubusercontent.com/karavan/sing-box-rules/refs/heads/rule-set/geosite-private.srs",
         "download_detour": "internet"
       },
       {
         "tag": "bypass",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/aleskxyz/sing-box-rules/refs/heads/rule-set/bypass.srs",
+        "url": "https://raw.githubusercontent.com/karavan/sing-box-rules/refs/heads/rule-set/bypass.srs",
         "download_detour": "internet"
       }
     ],
