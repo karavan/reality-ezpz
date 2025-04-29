@@ -2604,7 +2604,7 @@ fi
 generate_file_list
 install_packages
 install_docker
-configure_docker
+#configure_docker
 upgrade
 parse_config_file
 parse_users_file
