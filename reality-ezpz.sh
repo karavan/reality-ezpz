@@ -29,7 +29,7 @@ declare -A md5
 declare -A regex
 declare -A image
 
-config_path="/opt/reality-ezpz"
+config_path="/opt/Apps/reality-ezpz"
 compose_project='reality-ezpz'
 tgbot_project='tgbot'
 BACKTITLE=RealityEZPZ
@@ -46,9 +46,9 @@ image[haproxy]="haproxy:2.8.0"
 image[python]="python:3.11-alpine"
 image[wgcf]="virb3/wgcf:2.2.29"
 
-defaults[transport]=tcp
-defaults[domain]=www.google.com
-defaults[port]=443
+defaults[transport]=http
+defaults[domain]=vw0.ru
+defaults[port]=3443
 defaults[safenet]=OFF
 defaults[warp]=OFF
 defaults[warp_license]=""
@@ -58,7 +58,7 @@ defaults[warp_id]=""
 defaults[warp_client_id]=""
 defaults[warp_interface_ipv4]=""
 defaults[warp_interface_ipv6]=""
-defaults[core]=sing-box
+defaults[core]=xray
 defaults[security]=reality
 defaults[server]=$(curl -fsSL --ipv4 https://cloudflare.com/cdn-cgi/trace | grep ip | cut -d '=' -f2)
 defaults[tgbot]=OFF
