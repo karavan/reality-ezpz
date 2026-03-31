@@ -748,10 +748,10 @@ services:
   engine:
     image: ${image[${config[core]}]}
     $([[ ${config[security]} == 'reality' || ${config[transport]} == 'shadowtls' ]] && echo "ports:" || true)
-    $([[ (${config[security]} == 'reality' || ${config[transport]} == 'shadowtls') && ${config[port]} -eq 443 ]] && echo '- ${config[bind_ip]}:80:8080' || true)
-    $([[ ${config[security]} == 'reality' || ${config[transport]} == 'shadowtls' ]] && echo "- ${config[bind_ip]}:${config[port]}:8443" || true)
+    $([[ (${config[security]} == 'reality' || ${config[transport]} == 'shadowtls') && ${config[port]} -eq 443 ]] && echo '- '${config[bind_ip]}':80:8080' || true)
+    $([[ ${config[security]} == 'reality' || ${config[transport]} == 'shadowtls' ]] && echo "- '${config[bind_ip]}':${config[port]}:8443" || true)
     $([[ ${config[transport]} == 'tuic' || ${config[transport]} == 'hysteria2' ]] && echo "ports:" || true)
-    $([[ ${config[transport]} == 'tuic' || ${config[transport]} == 'hysteria2' ]] && echo "- ${config[bind_ip]}:${config[port]}:8443/udp" || true)
+    $([[ ${config[transport]} == 'tuic' || ${config[transport]} == 'hysteria2' ]] && echo "- '${config[bind_ip]}':${config[port]}:8443/udp" || true)
     $([[ ${config[security]} != 'reality' && ${config[transport]} != 'shadowtls' ]] && echo "expose:" || true)
     $([[ ${config[security]} != 'reality' && ${config[transport]} != 'shadowtls' ]] && echo "- 8443" || true)
     restart: always
@@ -777,8 +777,8 @@ echo "
   haproxy:
     image: ${image[haproxy]}
     ports:
-    $([[ ${config[security]} == 'letsencrypt' || ${config[port]} -eq 443 ]] && echo '- ${config[bind_ip]}:80:8080' || true)
-    - ${config[bind_ip]}:${config[port]}:8443
+    $([[ ${config[security]} == 'letsencrypt' || ${config[port]} -eq 443 ]] && echo '- '${config[bind_ip]}':80:8080' || true)
+    - '${config[bind_ip]}':${config[port]}:8443
     restart: always
     volumes:
     - ./${path[haproxy]#${config_path}/}:/usr/local/etc/haproxy/haproxy.cfg
